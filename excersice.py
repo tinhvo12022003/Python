@@ -353,8 +353,5 @@ while(True):
 # for i in 10:
 #     n = int(input())
 #     a = a.append(n)
-
-print("Hello world")
-
 # for i in 10:
 #     print(a[i])
