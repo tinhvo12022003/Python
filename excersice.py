@@ -328,20 +328,20 @@ class CD:
             total += int(info[-1])
         return total
     
-cd1 = CD()
-while(True):
-    cd1.CD_menu()
-    n = int(input("Nhập lựa chọn: "))
-    if n == 1:
-        cd1.input_info()
-    elif n == 2:
-        cd1.delete_CD()
-    elif n == 3:
-        cd1.show()
-    elif n == 4:
-        cd1.sort_CD()
-    elif n == 0:
-        break
+# cd1 = CD()
+# while(True):
+#     cd1.CD_menu()
+#     n = int(input("Nhập lựa chọn: "))
+#     if n == 1:
+#         cd1.input_info()
+#     elif n == 2:
+#         cd1.delete_CD()
+#     elif n == 3:
+#         cd1.show()
+#     elif n == 4:
+#         cd1.sort_CD()
+#     elif n == 0:
+#         break
 
 # def main(*person):
 #     print(type(person))
@@ -355,3 +355,55 @@ while(True):
 #     a = a.append(n)
 # for i in 10:
 #     print(a[i])
+
+# import base64
+# message = "Hello, world!"
+# message_bytes = message.encode("ascii")
+# base64_bytes = base64.b64encode(message_bytes)
+# base64_message = base64_bytes.decode("ascii")
+# print(base64_message)
+
+# base64_bytes = base64_message.encode("ascii")
+# message_bytes = base64.b64decode(base64_bytes)
+# message = message_bytes.decode("ascii")
+# print(message)
+
+# import matplotlib.pyplot as plt
+# import numpy as np
+# x = [1,2,3,5,6,7,8,9,10,12,13,14,15,16,18,19,21,22]
+# y = [100,90,80,60,60,55,60,65,70,70,75,76,78,79,90,99,99,100]
+# mymodel = np.poly1d(np.polyfit(x, y, 3.3))
+# myline = np.linspace(0, 22, 100)
+# plt.plot(myline, mymodel(myline))
+# plt.scatter(x, y)
+# plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([3, 5, 7, 9, 11])
+z = np.array([2, 4, 6, 8, 10])
+
+# tính toán hệ số của đường line hồi quy tuyến tính
+slope, intercept = np.polyfit(x, y, 1)
+
+# tạo một dãy giá trị trên trục x và trục y để vẽ đường line hồi quy tuyến tính
+x_line = np.linspace(1, 5, 100)
+y_line = slope * x_line + intercept
+
+# tạo một đối tượng figure và một đối tượng axes để vẽ đồ thị 3D
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# vẽ dữ liệu gốc
+ax.scatter(x, y, z)
+
+# vẽ đường line hồi quy tuyến tính
+ax.plot(x_line, y_line, x_line*0, '-r')
+
+
+
+
+
