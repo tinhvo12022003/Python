@@ -378,32 +378,79 @@ class CD:
 # plt.scatter(x, y)
 # plt.show()
 
-import matplotlib.pyplot as plt
-import numpy as np
-from mpl_toolkits.mplot3d import Axes3D
+# import numpy
+# from sklearn.metrics import r2_score
 
-x = np.array([1, 2, 3, 4, 5])
-y = np.array([3, 5, 7, 9, 11])
-z = np.array([2, 4, 6, 8, 10])
+# x = [1,2,3,5,6,7,8,9,10,12,13,14,15,16,18,19,21,22]
+# y = [100,90,80,60,60,55,60,65,70,70,75,76,78,79,90,99,99,100]
 
-# tính toán hệ số của đường line hồi quy tuyến tính
-slope, intercept = np.polyfit(x, y, 1)
+# mymodel = numpy.poly1d(numpy.polyfit(x, y, 3))
 
-# tạo một dãy giá trị trên trục x và trục y để vẽ đường line hồi quy tuyến tính
-x_line = np.linspace(1, 5, 100)
-y_line = slope * x_line + intercept
+# print(r2_score(y, mymodel(x)))
+# from sklearn import linear_model
+# import pandas as pd
+# df = pd.read_csv("data.csv")
+# X = df[['Volume', 'Weight']]
+# Y = df['CO2']
 
-# tạo một đối tượng figure và một đối tượng axes để vẽ đồ thị 3D
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
+# regr = linear_model.LinearRegression()
+# regr.fit(X, Y)
 
-# vẽ dữ liệu gốc
-ax.scatter(x, y, z)
+# predictCO2 = regr.predict([[3300, 1300]])
+# print(predictCO2)
+# print(regr.coef_)
 
-# vẽ đường line hồi quy tuyến tính
-ax.plot(x_line, y_line, x_line*0, '-r')
+# import numpy as np
 
+# arr = np.array([1, 2, 3])
+# std = np.mean(arr)
 
+# print(std)
+# import numpy
+# import matplotlib.pyplot as plt
+# from sklearn.metrics import r2_score 
 
+# a = numpy.random.seed(2)
+# x = numpy.random.normal(3, 1, 100)
+# y = numpy.random.normal(150, 40, 100)/x
+# train_x = x[:80]
+# train_y = y[:80]
 
+# test_x = x[80:]
+# test_y = y[80:]
+
+# plt.scatter(train_x, train_y)
+
+# mymodel = numpy.poly1d(numpy.polyfit(train_x, train_y, 4))
+
+# myline = numpy.linspace(0, 6, 100)
+
+# plt.plot(myline, mymodel(myline))
+
+# # plt.show()
+# print(r2_score(test_y, mymodel(test_x)))
+# print(mymodel(5))
+
+# import pandas as pd
+# from sklearn import tree
+# from sklearn.tree import DecisionTreeClassifier
+# import matplotlib.pyplot as plt
+
+# df = pd.read_csv("data3.csv")
+# d = {'UK' : 0, 'USA' : 1, 'N' : 2}
+# df['Nationality'] = df["Nationality"].map(d)
+
+# d = {'YES' : 1, 'NO' : 0}
+# df["Go"] = df["Go"].map(d)
+
+# features = ["Age", "Experience", "Rank", "Nationality", "Go"]
+
+# X = df[features]
+# Y = df["Go"]
+
+# dtree = DecisionTreeClassifier()
+# dtree = dtree.fit(X, Y)
+
+# tree.plot_tree(dtree, feature_names=features)
+# plt.show()
 
