@@ -133,3 +133,5 @@ print(hstack)
 
 vstack = np.vstack((list1, list2), dtype=int, casting='same_kind')
 print(vstack)
+
+arr = np.random.randint(10, 100, size=100)
