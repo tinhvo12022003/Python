@@ -1,5 +1,7 @@
 import numpy as np
 import statistics as st
+import matplotlib.pyplot as plt
+import string
 
 #create int numpy arrays
 python_list = [1, 2, 3, 4] #print(type(python_list)) #<class 'list'>
@@ -135,3 +137,56 @@ vstack = np.vstack((list1, list2), dtype=int, casting='same_kind')
 print(vstack)
 
 arr = np.random.randint(10, 100, size=100)
+print(arr)
+
+#create int list random
+int_random_list =  np.random.randint(3, 10, size=9)
+print(int_random_list)
+
+#create float list random
+float_random_list = np.random.rand(9)
+print(float_random_list)
+
+#create multidimensional list random
+multidimensional_random_list = np.random.randint(0, 10, size=(3, 3))
+print(multidimensional_random_list)
+
+import seaborn as sns
+normal_array = np.random.normal(79, 15, 80)
+# print(normal_array)
+
+# sns.set()
+# plt.hist(normal_array)
+# plt.show()
+
+#Arange
+lst = range(0, 11, 1)
+# for i in lst:
+#     print(i)
+
+whole_numbers = np.arange(0, 20, 1)  #start, end, step
+print(whole_numbers)
+
+linspace = np.linspace(1, 20, 20, dtype=int) #start end size dtype
+print(linspace)
+
+logspace = np.logspace(1, 4, 20, dtype=int)
+print(logspace) #same linspace but log(10)
+
+
+a = [1, 2, 3]
+tile = np.tile(a, 3)
+repeat = np.repeat(a, 3)
+print(tile) #loop array n times
+print(repeat) #repeat each element n times
+
+print("".join(np.random.choice(list((string.ascii_letters + string.digits)), size=10)))
+
+
+f = np.array([1, 2, 3])
+g = np.array([4, 5, 6])
+print(np.dot(f, g))
+
+h = [[1,2],[3,4]]
+i = [[5,6],[7,8]]
+np.matmul(h, i)
