@@ -16,6 +16,22 @@ students = [
 for student in students:
     db.students.insert_one(student)
 
+query = {
+    'age' : {'$gte': 30},
+    'city': 'Helsinki'
+}
+
+student_obj = db.students.find(query).sort('age', -1).limit(4)
+for student in student_obj:
+    print(student)
+
+db.students.delete_one({'name' : 'Sami'})
+for student in db.students.find():
+    print(student)
+
+#to drop students collection
+#db.students.drop()
+
 app = Flask(__name__)
 
 if __name__ == '__main__':
